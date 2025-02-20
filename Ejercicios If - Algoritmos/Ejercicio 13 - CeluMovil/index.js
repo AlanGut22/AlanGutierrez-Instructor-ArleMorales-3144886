@@ -1,7 +1,6 @@
 let operador = prompt("Ingrese su operador (Tigo, Claro o Movistar):");
 let minutosInternacionales = Number(prompt("Ingrese la cantidad de minutos internacionales consumidos:"));
 
-
 if (operador == "tigo") {
     cargoFijo = 45000;
     valorMinuto = 200;
@@ -21,10 +20,4 @@ if (operador == "tigo") {
 costoMinutos = minutosInternacionales * valorMinuto;
 costoTotal = cargoFijo + costoMinutos + valorPaqueteDatos;
 
-alert(`Resumen de costos:
-    Operador: ${operador}
-    Cargo fijo: $${cargoFijo}
-    Valor por minuto internacional: $${valorMinuto}
-    Costo por minutos internacionales: $${costoMinutos}
-    Paquete de datos: $${valorPaqueteDatos}
-    Total a pagar: $${costoTotal}`);
+alert(`Resumen de costos: \n Operador: ${operador} \n Cargo fijo: $${cargoFijo} \n Valor por minuto internacional: $${valorMinuto} \n Costo por minutos internacionales: $${costoMinutos} \n Paquete de datos: $${valorPaqueteDatos} \n Total a pagar: $${costoTotal}`);

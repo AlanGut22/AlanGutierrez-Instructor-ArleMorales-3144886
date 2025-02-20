@@ -4,7 +4,6 @@ let jalapeño = prompt("¿Quiere jalapeño? (si/no)");
 let pavo = prompt("¿Quiere pavo? (si/no)");
 let queso = prompt("¿Quiere queso? (si/no)");
 
-
 if (sandwich == "pequeño") {
     precioBase = 6000;
 } else if (sandwich == "grande") {
@@ -20,11 +19,4 @@ costoQueso = (queso === "si") ? 2500 : 0;
 
 costoTotal = precioBase + costoTocineta + costoJalapeño + costoPavo + costoQueso;
 
-alert(`Resumen del Pedido:
-    Tamaño del Sandwich: ${sandwich}
-    Precio del Sandwich: $${precioBase}
-    Tocineta: $${costoTocineta}
-    Jalapeño: $${costoJalapeño}
-    Pavo: $${costoPavo}
-    Queso: $${costoQueso}
-    Total a pagar: $${costoTotal}`);
+alert(`Resumen del Pedido: \n Tamaño del Sandwich: ${sandwich} \n Precio del Sandwich: $${precioBase} \n Tocineta: $${costoTocineta} \n Jalapeño: $${jalapeño} \n Pavo: $${costoPavo} \n Queso: $${costoQueso} \n Total a pagar: $${costoTotal}`);
