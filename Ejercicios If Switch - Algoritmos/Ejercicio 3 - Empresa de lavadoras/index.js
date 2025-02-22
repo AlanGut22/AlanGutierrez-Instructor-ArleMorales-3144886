@@ -1,5 +1,5 @@
-let valor = false
-while(valor != true){
+let valor = true
+while(valor == true){
     let opcion = Number(prompt(`Bienvenido, seleccione: \n 1 Ingresar los datos de su lavadora \n 2 Salir`));
     switch (opcion){
         case 1 :
@@ -27,6 +27,10 @@ while(valor != true){
             alert(`Costo total por alquiler ${cantidad} lavadoras tipo ${tipoLavadora} por ${horas} horas: ${total}.`);
         break;
         
-        case 2 : valor = true; break;
+        case 2 : valor = false; break;
+
+        default:
+            alert("Opción no válida. Intente nuevamente.");
+        break;
     } 
 }

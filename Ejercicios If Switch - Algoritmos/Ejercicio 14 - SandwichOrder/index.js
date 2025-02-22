@@ -1,23 +1,25 @@
-let valor = false
-while(valor != true){
+let valor = true
+while(valor == true){
     let opcion = Number(prompt(`Bienvenido, seleccione: \n 1 Iniciar el programa de SandwichOrder \n 2 Salir`));
     switch (opcion){
         case 1 :
 
-            let sandwich = prompt("¿De qué tamaño es el sandwich? (Pequeño/Grande)");
+        while (true) {
+            sandwich = prompt("¿De qué tamaño es el sándwich? (Pequeño/Grande)");
+
+            if (sandwich === "pequeño" || sandwich === "grande") {
+                break;  // Si es válido, sale del bucle
+            } else {
+                alert("Tamaño no válido. Ingrese 'pequeño' o 'grande'.");
+            }
+        }
+        
             let tocineta = prompt("¿Quiere tocineta? (si/no)");
             let jalapeño = prompt("¿Quiere jalapeño? (si/no)");
             let pavo = prompt("¿Quiere pavo? (si/no)");
             let queso = prompt("¿Quiere queso? (si/no)");
-            
-            if (sandwich == "pequeño") {
-                precioBase = 6000;
-            } else if (sandwich == "grande") {
-                precioBase = 12000;
-            } else {
-                alert("Tamaño no válido. Ingrese 'pequeño' o 'grande'.");
-            }
-            
+
+            precioBase = (sandwich === "pequeño") ? 6000 : 12000;
             costoTocineta = (tocineta === "si") ? 3000 : 0;
             jalapeño = 0;
             costoPavo = (pavo === "si") ? 3000 : 0;
@@ -29,6 +31,10 @@ while(valor != true){
     
         break;
         
-        case 2 : valor = true; break;
+        case 2 : valor = false; break;
+
+        default:
+            alert("Opción no válida. Intente nuevamente.");
+        break;
     } 
 }

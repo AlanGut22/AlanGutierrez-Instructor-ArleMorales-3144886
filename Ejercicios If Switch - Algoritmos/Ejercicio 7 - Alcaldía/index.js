@@ -1,5 +1,5 @@
-let valor = false
-while(valor != true){
+let valor = true
+while(valor == true){
     let opcion = Number(prompt(`Bienvenido, seleccione: \n 1 Iniciar el programa \n 2 Salir`));
     switch (opcion){
         case 1 :
@@ -24,6 +24,10 @@ while(valor != true){
             alert(`El valor de ayuda mensual es: ${ayuda}.`);
         break;
         
-        case 2 : valor = true; break;
+        case 2 : valor = false; break;
+
+        default:
+            alert("Opción no válida. Intente nuevamente.");
+        break;
     } 
 }
