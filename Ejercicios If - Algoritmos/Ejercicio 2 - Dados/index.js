@@ -1,4 +1,4 @@
-let dados = Math.floor(Math.random()*7) + 1;
+let dados = Math.floor(Math.random()*6) + 1;
 
 alert(`El número que cayó en el dado es: ${dados}`);
 

@@ -8,11 +8,16 @@ while(valor == true){
 
             alert(`El número que cayó en el dado es: ${dados}`);
 
-            if (dados % 2 == 0) { 
-                alert(`El número que cayó ${dados} es par.`);
-            } else {
-                alert(`El número que cayó ${dados} es impar.`);
+            function lanzardado(){
+                if (dados % 2 == 0) { 
+                    alert(`El número que cayó ${dados} es par.`);
+                } else {
+                    alert(`El número que cayó ${dados} es impar.`);
+                }
             }
+
+            lanzardado()
+
             break;
         
         case 2 : valor = false; break;
