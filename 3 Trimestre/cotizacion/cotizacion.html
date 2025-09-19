@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Estimador profesional — Cotización</title>
+	<link rel="stylesheet" href="styles.css">
+	<!-- jsPDF (para exportar PDF) -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+	<div class="page">
+		<header class="top">
+			<div class="top-left">
+				<h1 class="title">Estimador profesional — Cotización</h1>
+				<p class="subtitle">Plantillas, totales automáticos, export CSV/PDF y persistencia local.</p>
+			</div>
+
+			<div class="top-right">
+				<label class="small-label">IVA (%) <input id="ivaPercent" type="number" value="19" /></label>
+				<label class="small-label">Contingencia (%) <input id="contPercent" type="number" value="10" /></label>
+			</div>
+		</header>
+
+		<section class="controls">
+			<div class="controls-left">
+				<button class="btn btn-blue" onclick="applyTemplate('minimo')">Plantilla Mínima</button>
+				<button class="btn btn-green" onclick="applyTemplate('estandar')">Plantilla Estándar</button>
+				<button class="btn btn-purple" onclick="applyTemplate('alta')">Plantilla Alta</button>
+				<button class="btn btn-yellow" onclick="addRow()">+ Añadir fila</button>
+				<button class="btn btn-outline" onclick="clearAll()">Limpiar</button>
+			</div>
+			<div class="controls-right">
+				<!-- espacio reservado, inputs en header -->
+			</div>
+		</section>
+
+		<main>
+			<section class="panel table-panel">
+				<div class="table-wrap">
+					<table id="rowsTable">
+						<thead>
+							<tr>
+								<th>Concepto</th>
+								<th class="center">Unidad/Cantidad</th>
+								<th class="right">Costo unitario</th>
+								<th class="right">Subtotal</th>
+								<th>Notas</th>
+								<th class="center">Acciones</th>
+							</tr>
+						</thead>
+						<tbody id="rowsBody">
+							<!-- renderizado dinámico -->
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section class="panel summary-panel">
+				<div class="summary-grid">
+					<div class="summary-card">
+						<div class="label">Subtotal</div>
+						<div id="subtotal" class="big">0 COP</div>
+					</div>
+					<div class="summary-card">
+						<div class="label">IVA (<span id="ivaLabel">19</span>%)</div>
+						<div id="ivaAmount" class="big">0 COP</div>
+					</div>
+					<div class="summary-card">
+						<div class="label">Contingencia (<span id="contLabel">10</span>%)</div>
+						<div id="contAmount" class="big">0 COP</div>
+					</div>
+					<div class="summary-card total">
+						<div class="label">Total estimado</div>
+						<div id="total" class="big">0 COP</div>
+					</div>
+				</div>
+
+				<p class="hint">Sugerencia: exporta el CSV o PDF para documentación. La plantilla se guarda automáticamente en localStorage.</p>
+			</section>
+
+			<section class="panel actions-panel">
+				<button class="btn btn-red" onclick="exportPDF()">Exportar a PDF</button>
+				<button class="btn btn-indigo" onclick="exportCSV()">Exportar a CSV</button>
+			</section>
+		</main>
+	</div>
+
+	<script src="app.js"></script>
+</body>
+</html>
